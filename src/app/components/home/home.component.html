@@ -1,0 +1,15 @@
+<div>
+  <h2 class="cartelera">Cartelera</h2>
+  <ul>
+    <li *ngFor="let pelicula of peliculas" class="pelicula">
+      <a [routerLink]="['/movie-detalle',pelicula._id]">
+        <div>
+            <img src="{{url+'api/get-image/'+pelicula.image}}" *ngIf = "pelicula.image"/>
+        </div>
+     </a>
+      <h4>{{pelicula.nombre}}</h4>
+      <p>{{pelicula.fecha_de_estreno}}</p>
+    </li>
+  </ul>
+</div>
+

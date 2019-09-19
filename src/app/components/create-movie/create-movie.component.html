@@ -1,0 +1,112 @@
+<section id="register" class="mb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+        <div class="card_register">
+          <div class="card">
+            <div class="card-body text-center">
+              <form  #newUser="ngForm" (ngSubmit)="onSubmit(newUser)" >
+                <h1 class="h3 mb-3 font-weight-normal">Registrar Pelicula</h1>
+                <!--Nombre de la pelicula-->
+                <div class="form-group">
+                  <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre"
+                   [(ngModel)]="new_pelicula.nombre" #nombre= "ngModel" required/>
+                   <span *ngIf="nombre.touched && !nombre.valid">
+                      El nombre no es valido
+                    </span>
+                </div>
+                <!--sinopsis-->
+                <div class="form-group">
+                    <input type="text" id="sinopsis" name="sinopsis" class="form-control" placeholder="Sinopsis"
+                     [(ngModel)]="new_pelicula.sinopsis" #sinopsis= "ngModel" required/>
+                     <span *ngIf="sinopsis.touched && !sinopsis.valid">
+                        La sinopsis no es validad
+                      </span>
+                </div>
+                <!--clasificación-->
+                <div class="form-group">
+                    <input type="text" id="clasificacion" name="clasificacion" class="form-control" placeholder="Clasificación"
+                     [(ngModel)]="new_pelicula.clasificacion" #clasificacion= "ngModel" required />
+                     <span *ngIf="clasificacion.touched && !clasificacion.valid">
+                        La clasificacion no es valida
+                      </span>
+                </div>
+                <!--duracion-->
+                <div class="form-group">
+                    <input type="text" id="duracion" name="duracion" class="form-control" placeholder="Duración"
+                    [(ngModel)]="new_pelicula.duracion" #duracion= "ngModel" required pattern="[0-9]+"/>
+                    <span *ngIf="duracion.touched && !duracion.valid">
+                        El campo de duracion esta incorrecto
+                      </span>
+                </div>
+                <!--genero-->
+                <div class="form-group">
+                    <input type="text" id="genero" name="genero" class="form-control" placeholder="Genero"
+                     [(ngModel)]="new_pelicula.genero" #genero= "ngModel" required/>
+                     <span *ngIf="genero.touched && !genero.valid" >
+                        El campo genero esta incorrecto
+                      </span>
+                </div>
+                <!--Director-->
+                <div class="form-group">
+                    <input type="text" id="director" name="director" class="form-control" placeholder="Director"
+                     [(ngModel)]="new_pelicula.director" #director= "ngModel" required/>
+                     <span *ngIf="director.touched && !director.valid">
+                        El campo director esta incorrecto
+                      </span>
+                </div>
+                <!--reparto-->
+                <div class="form-group">
+                    <input type="text" id="reparto" name="reparto" class="form-control" placeholder="Reparto"
+                     [(ngModel)]="new_pelicula.reparto" #reparto= "ngModel" required/>
+                     <span *ngIf="reparto.touched && !reparto.valid">
+                        El campo reparto esta incorrecto
+                      </span>
+                </div>
+                  <!--pais-->
+                <div class="form-group">
+                    <input type="text" id="pais" name="pais" class="form-control" placeholder="Pais"
+                     [(ngModel)]="new_pelicula.pais" #pais= "ngModel" required pattern="[a-zA-Z ]+"/>
+                     <span *ngIf="pais.touched && !pais.valid">
+                        El campo pais esta incorrecto
+                      </span>
+                </div>
+                <!--idioma-->
+                <div class="form-group">
+                    <input type="text" id="idioma" name="idioma" class="form-control" placeholder="Idioma"
+                     [(ngModel)]="new_pelicula.idioma" #idioma= "ngModel" required/>
+                     <span *ngIf="idioma.touched && !idioma.valid">
+                        El campo idioma esta incorrecto
+                      </span>
+                </div>
+                <!--fecha de estreno-->
+                <div class="form-group">
+                  <input type="date" id="dateEstreno" name="dateEstreno" class="form-control"
+                   [(ngModel)]="new_pelicula.fecha_de_estreno" #dateEstreno= "ngModel" required/>
+                   <span *ngIf="dateEstreno.touched && !dateEstreno.valid">
+                      La fecha de estreno no es valida
+                    </span>
+                </div>
+                <!--ruta_trailer-->
+                <div class="form-group">
+                    <input type="text" id="ruta_trailer" name="ruta_trailer" class="form-control" placeholder="Link trailer"
+                     [(ngModel)]="new_pelicula.ruta_trailer" #ruta_trailer= "ngModel" required/>
+                     <span *ngIf="ruta_trailer.touched && !ruta_trailer.valid">
+                        El campo trailer esta incorrecto
+                      </span>
+                </div>
+                <!--file-->
+                <div class="form-group">
+                    <input type="file" id="imagen" name="imagen" class="form-control login-user"
+                     (change) = "setEnviarImagen($event)" required />
+                </div>
+                <!--Boton-->
+                <button type="submit" class="btn btn-lg bg-dark letracolor" [disabled] ="!newUser.form.valid" >Registrar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

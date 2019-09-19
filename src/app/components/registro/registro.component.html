@@ -1,0 +1,54 @@
+<section id="register" class="mb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+        <div class="card_register">
+          <div class="card">
+            <div class="card-body text-center">
+              <form  #newUser="ngForm" (ngSubmit)="onSubmit(newUser)" >
+                <h1 class="h3 mb-3 font-weight-normal">Registro</h1>
+                <!--nombre-->
+                <div class="form-group">
+                  <input type="text" id="name" name="name" class="form-control" placeholder="Nombre"
+                   [(ngModel)]="new_user.name" #nombre= "ngModel" required pattern="[a-zA-Z ]+"/>
+                   <span *ngIf="nombre.touched && !nombre.valid">
+                      El Nombre no es valido
+                    </span>
+                </div>
+                <!--apellidos-->
+                <div class="form-group">
+                  <input type="text" id="apellido" name="apellido" class="form-control" placeholder="Apellidos"
+                   [(ngModel)]="new_user.lastName" #apellido= "ngModel" required pattern="[a-zA-Z ]+"/>
+                   <span *ngIf="apellido.touched && !apellido.valid">
+                      El apellido no es valido
+                    </span>
+                </div>
+                <!--email-->
+                <div class="form-group">
+                  <input type="email" id="email" name="email" class="form-control" placeholder="Correo electrónico"
+                   [(ngModel)]="new_user.email" #email= "ngModel" required/>
+                   <span *ngIf="email.touched && !email.valid" >
+                      El correo esta incorrecto debe tener @ & .
+                    </span>
+                </div>
+                <!--password-->
+                <div class="form-group">
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña"
+                    [(ngModel)]="new_user.password" #password= "ngModel" required/>
+                    <span *ngIf="password.touched && !password.valid">
+                        El campo de contraseña no puede estar vacio
+                      </span>
+                </div>
+                <!--Boton-->
+                <button type="submit" class="btn btn-lg bg-dark letracolor" [disabled] ="!newUser.form.valid" >Registrar</button>
+                <div class="form-group">
+                  <a [routerLink]="['/login']" class="form-control login-user">¿Tienes una cuenta?</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

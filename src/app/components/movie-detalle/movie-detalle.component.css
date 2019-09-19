@@ -1,0 +1,26 @@
+.div1
+{
+  list-style: none;
+  display: block;
+  float: left;
+  width: 30%;
+  text-align: start;
+  margin-left: 10px;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.divPrincipal
+{
+  list-style: none;
+  display: block;
+  float: left;
+  width: 20%;
+}
+.div1 img{
+  height: 300px;
+}
+.letra{
+  font-size: 70%;
+  text-align: initial;
+}

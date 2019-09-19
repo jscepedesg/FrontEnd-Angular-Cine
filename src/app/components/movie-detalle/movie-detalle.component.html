@@ -1,0 +1,29 @@
+<div>
+  <h1>{{pelicula.nombre}}</h1>
+  <div class="div1">
+      <img src="{{url+'api/get-image/'+pelicula.image}}" *ngIf = "pelicula.image"/>
+  </div>
+  <div class="div1">
+      <h5>Sinopsis</h5>
+      <p class="letra">{{pelicula.sinopsis}}</p>
+      <h5>Clasificación</h5>
+      <p class="letra">{{pelicula.clasificacion}}</p>
+      <h5>Duración</h5>
+      <p class="letra">{{pelicula.duracion}}</p>
+      <h5>Género</h5>
+      <p class="letra">{{pelicula.genero}}</p>
+      <h5>Director</h5>
+      <p class="letra">{{pelicula.director}}</p>
+      <h5>Reparto</h5>
+      <p class="letra">{{pelicula.reparto}}</p>
+      <h5>País</h5>
+      <p class="letra">{{pelicula.pais}}</p>
+      <h5>Idioma</h5>
+      <p class="letra">{{pelicula.idioma}}</p>
+      <h5>Se estrenó</h5>
+      <p class="letra">{{pelicula.fecha_de_estreno}}</p>
+  </div>
+  <div class="div1">
+      <iframe width="300" height="200" [src]="urlSaneada" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
